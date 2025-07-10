@@ -17,29 +17,29 @@ version = 3
     style = 'plain'
 
   [[blocks.segments]]
-    template = ' '
-    foreground = '#ffffff'
+    template = ''
+    foreground = '#011627'
     background = '#61AFEF'
     type = 'text'
     style = 'plain'
 
   [[blocks.segments]]
     leading_diamond = ''
-    foreground = '#ffffff'
+    foreground = '#011627'
     background = '#61AFEF'
     type = 'os'
     style = 'diamond'
 
   [[blocks.segments]]
-    template = '{{ .UserName }} '
-    foreground = '#ffffff'
+    template = '{{.UserName }} '
+    foreground = '#011627'
     powerline_symbol = ''
     background = '#61AFEF'
     type = 'session'
     style = 'powerline'
 
   [[blocks.segments]]
-    foreground = '#ffffff'
+    foreground = '#011627'
     powerline_symbol = ''
     background = '#ffafd2'
     type = 'path'
