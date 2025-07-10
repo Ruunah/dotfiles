@@ -1,0 +1,47 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+#black = '#011627'
+#pink = '#ffafd2'
+#blue = '#77E4F7'
+
+#  [transient_prompt]
+#  template = '<#77E4F7></> <#77E4F7>{{ .Folder }}</> <#77E4F7> '
+#  foreground = 'p:black'
+#  background = 'transparent'
+
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+
+[[blocks.segments]]
+leading_diamond = ''
+template = "{{.Icon}}"
+foreground = '#011627'
+background = '#77E4F7'
+type = 'os'
+style = 'diamond'
+
+[blocks.segments.properties]
+macos = "mac"
+
+[[blocks.segments]]
+trailing_diamond = ''
+template = ' {{ .UserName }}'
+foreground = '#011627'
+background = '#77E4F7'
+type = 'session'
+style = 'diamond'
+
+[[blocks.segments]]
+template = '  {{ path .Path .Location }} '
+trailing_diamond = ''
+foreground = '#011627'
+background = '#ffafd2'
+type = 'path'
+style = 'diamond'
+
+[blocks.segments.properties]
+style = 'folder'
