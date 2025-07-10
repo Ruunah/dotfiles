@@ -1,47 +1,64 @@
-console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
-final_space = true
 
-#black = '#011627'
-#pink = '#ffafd2'
-#blue = '#77E4F7'
-
-#  [transient_prompt]
-#  template = '<#77E4F7></> <#77E4F7>{{ .Folder }}</> <#77E4F7> '
-#  foreground = 'p:black'
-#  background = 'transparent'
-
+[transient_prompt]
+  template = '<#61AFEF,transparent></><transparent,#61AFEF>{{ .Folder }}</><#61AFEF,transparent> </>'
+  foreground = '#ffffff'
+  background = '#ffafd2'
 
 [[blocks]]
-type = 'prompt'
-alignment = 'left'
+  type = 'prompt'
+  alignment = 'left'
 
-[[blocks.segments]]
-leading_diamond = ''
-template = "{{.Icon}}"
-foreground = '#011627'
-background = '#77E4F7'
-type = 'os'
-style = 'diamond'
+  [[blocks.segments]]
+    template = '╭─'
+    foreground = '#ffffff'
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
 
-[blocks.segments.properties]
-macos = "mac"
+  [[blocks.segments]]
+    template = ' '
+    foreground = '#ffffff'
+    background = '#61AFEF'
+    type = 'text'
+    style = 'plain'
 
-[[blocks.segments]]
-trailing_diamond = ''
-template = ' {{ .UserName }}'
-foreground = '#011627'
-background = '#77E4F7'
-type = 'session'
-style = 'diamond'
+  [[blocks.segments]]
+    leading_diamond = ''
+    foreground = '#ffffff'
+    background = '#61AFEF'
+    type = 'os'
+    style = 'diamond'
 
-[[blocks.segments]]
-template = '  {{ path .Path .Location }} '
-trailing_diamond = ''
-foreground = '#011627'
-background = '#ffafd2'
-type = 'path'
-style = 'diamond'
+  [[blocks.segments]]
+    template = '{{ .UserName }} '
+    foreground = '#ffffff'
+    powerline_symbol = ''
+    background = '#61AFEF'
+    type = 'session'
+    style = 'powerline'
 
-[blocks.segments.properties]
-style = 'folder'
+  [[blocks.segments]]
+    foreground = '#ffffff'
+    powerline_symbol = ''
+    background = '#ffafd2'
+    type = 'path'
+    style = 'powerline'
+
+    [blocks.segments.properties]
+      folder_icon = '󰉋'
+      folder_separator_icon = ' ❯ '
+      home_icon = ''
+      style = 'agnoster_full'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '╰─'
+    foreground = '#ffffff'
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
